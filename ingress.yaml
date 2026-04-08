@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app
+  name: wil-playground
   namespace: dev
 spec:
   ingressClassName: traefik
   rules:
-  - host: app.local
+  - host: localhost
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: app
+            name: wil-playground
             port:
               number: 8888
